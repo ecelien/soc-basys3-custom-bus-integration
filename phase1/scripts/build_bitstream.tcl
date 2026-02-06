@@ -4,6 +4,9 @@ set project_name "task_1"
 set origin_dir "."
 set output_dir "../hw/vivado"
 
+# Set board repo path
+set_param board.repoPaths [file normalize "$origin_dir/../hw/board_files"]
+
 # Open the existing project
 open_project "$output_dir/$project_name.xpr"
 
