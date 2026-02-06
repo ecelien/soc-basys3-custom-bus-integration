@@ -7,13 +7,13 @@ set part_name "xc7a35tcpg236-1"
 set ip_repo_dir [file normalize "$origin_dir/../hw/ip_repo"]
 set design_name "design_4"
 
-# Set board repo path GLOBAL parameter to ensure it is picked up before project creation
+# Set board repo path
 set_param board.repoPaths [file normalize "$origin_dir/../hw/board_files"]
 
 # Create the project
 create_project $project_name $output_dir -part $part_name -force
 
-# (Optional) Add board files if you have them in the repo
+# Add board files if you have them in the repo
 set_property board_part_repo_paths [file normalize "$origin_dir/../hw/board_files"] [current_project]
 # Refresh catalog to ensure the board_part_repo_paths is picked up and warnings are suppressed
 update_ip_catalog

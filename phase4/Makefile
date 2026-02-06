@@ -9,15 +9,15 @@ program:
 	cd scripts && xsct program.tcl
 
 
-# 1. Create Vivado Project
+# Create Vivado Project
 project:
 	cd scripts && vivado -mode batch -notrace -nojournal -nolog -source recreate_project.tcl
 
-# 2. Build Hardware (Synthesis -> Implementation -> Bitstream -> XSA)
+# Build Hardware (Synthesis -> Implementation -> Bitstream -> XSA)
 bitstream:
 	cd scripts && vivado -mode batch -notrace -nojournal -nolog -source build_bitstream.tcl
 
-# 3. Build Software (Vitis Workspace -> Compile ELF)
+# Build Software (Vitis Workspace -> Compile ELF)
 sw:
 	cd scripts && vitis -s recreate_vitis.py
 

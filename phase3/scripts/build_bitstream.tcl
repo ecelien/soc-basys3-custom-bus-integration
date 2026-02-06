@@ -7,15 +7,15 @@ set output_dir "../hw/vivado"
 # Open the existing project
 open_project "$output_dir/$project_name.xpr"
 
-# 1. Run Synthesis
+# Synthesis
 launch_runs synth_1 -jobs 8
 wait_on_run synth_1
 
-# 2. Run Implementation 
+# Implementation 
 launch_runs impl_1 -jobs 8
 wait_on_run impl_1
 
-# 3. Generate Bitstream
+# Generate Bitstream
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
 
